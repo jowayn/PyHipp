@@ -2,7 +2,7 @@
 
 temp1=($(squeue))
 
-cmd1="sbatch --dependency=afterok:"
+cmd1="sbatch --dependency=afterany:"
 
 counter1=0
 for i in "${temp1[@]}"; do
