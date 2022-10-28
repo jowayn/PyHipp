@@ -5,6 +5,8 @@ import hickle as hkl
 import numpy as np
 from .misc import getChannelInArray
 
+plt.rcParams['font.size'] = 6
+
 class Waveform(DPT.DPObject):
     # Please change the class name according to your needs
     filename = 'waveform.hkl'  # this is the filename that will be saved if it's run with saveLevel=1
@@ -198,7 +200,7 @@ class Waveform(DPT.DPObject):
         ax.plot(x, y)
 
         ########labels###############
-        if not plotOpts['TitleOff']:  # if TitleOff icon in the right-click menu is clicked
+        if not plotOpts['TitleOff'] or isCorner:  # if TitleOff icon in the right-click menu is clicked
             ax.set_title(self.dirs[ind])
                 
         if (not plotOpts['LabelsOff']) or isCorner:  # if LabelsOff icon in the right-click menu is clicked

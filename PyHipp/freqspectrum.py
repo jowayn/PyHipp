@@ -8,6 +8,8 @@ import matplotlib.pyplot as plt
 import os 
 from .misc import getChannelInArray
 
+plt.rcParams['font.size'] = 6
+
 class FreqSpectrum(DPT.DPObject):
 
 	filename = "freqspectrum.hkl"
@@ -162,11 +164,11 @@ class FreqSpectrum(DPT.DPObject):
 		ax.fill_between(x, y-e, y+e, alpha=0.5)
 		ax.ticklabel_format(axis='both', style='sci', scilimits=(0,3))
 		
-		if (not plotOpts['TitleOff']):
+		if (not plotOpts['TitleOff']) or isCorner:
 			ax.set_title(self.dirs[i])
 
 		if (not plotOpts['LabelsOff']) or isCorner:
-			ax.set_xlabel('Freq')
+			ax.set_xlabel('Freq (Hz)')
 			ax.set_ylabel('Magnitude')
 
 		if plotOpts['TicksOff'] or (not isCorner):
