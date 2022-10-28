@@ -5,11 +5,7 @@
 #SBATCH --time=24:00:00   # walltime
 #SBATCH --ntasks=1   # number of processor cores (i.e. tasks)
 #SBATCH --nodes=1   # number of nodes
-<<<<<<< HEAD
-#SBATCH --cpus-per-task=1   # number of CPUs for this task
-=======
 #SBATCH --cpus-per-task=1	# number of processors per task
->>>>>>> upstream/main
 #SBATCH -J "rplhps"   # job name
 
 ## /SBATCH -p general # partition (queue)
@@ -31,9 +27,5 @@ from PyHipp import export_mountain_cells; \
 export_mountain_cells.export_mountain_cells(); \
 print(time.localtime());"
 
-<<<<<<< HEAD
-conda deactivate
-=======
 conda deactivate 
->>>>>>> upstream/main
 /data/src/PyHipp/envlist.py $envarg
